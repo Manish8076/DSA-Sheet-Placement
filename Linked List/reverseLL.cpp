@@ -1,3 +1,5 @@
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<< BY ITERATIVE APPROACH >>>>>>>>>>>>>>>>>>>>>>>>>>
+
 class Solution
 {
     public:
@@ -19,6 +21,45 @@ class Solution
       curr = forward;
      }      
         return prev;
+    }
+    
+};
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<< BY RECURSION APPROACH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class Solution
+{
+    public:
+    
+    
+    void reverse( Node *&head, Node *&current, Node*&prev){
+        
+        if(current == NULL){
+          //  head = prev;
+            return ;
+        }
+        Node *forward = current->next;
+        current->next = prev;
+        reverse(head, forward, current);
+        prev=current;
+    
+    }
+    
+    //Function to reverse a linked list.
+    struct Node* reverseList(struct Node *&head)
+    {
+        // code here
+        // return head of reversed list
+        
+        Node *current = head;
+        Node *prev = NULL;
+        
+        reverse(head, current , prev);
+        
+        return prev;
+        
+        
+        
     }
     
 };
