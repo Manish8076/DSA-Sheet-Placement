@@ -5,7 +5,7 @@
         stack<int>st;
         int n = nums2.size();
 
-        for(int i = 0; i<n; i++){
+        for(int i = n-1; i>=0; i--){
             int element = nums2[i];
            
            while(!st.empty() && st.top()>=element){
