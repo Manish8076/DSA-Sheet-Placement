@@ -2,27 +2,36 @@
 
 class Solution {
 public:
-    
-       int height(TreeNode* node, int& diameter) {
 
-        if (!node) {
-            return 0;
+
+    int dfsHeight (TreeNode *root) {
+
+        if (root == NULL) return 0;        
+        int leftHeight = dfsHeight (root -> left);
+        if(leftHeight==-1){
+            return -1;
+        }
+        int rightHeight = dfsHeight (root -> right);
+        if(rightHeight == -1){
+            return -1;
+        }
+        
+        if(abs(leftHeight - rightHeight) > 1){
+            return -1;
         }
 
-        int lh = height(node->left, diameter);
-        int rh = height(node->right, diameter);
+        return max(leftHeight, rightHeight) + 1;
+    }
+    
 
-        diameter = max(diameter, lh + rh);
-
-         return 1 + max(lh, rh);
+    bool isBalanced(TreeNode* root) {
+    
+    if(root== NULL){
+        return true;
     }
 
-
-    int diameterOfBinaryTree(TreeNode* root) {
-
-      int diameter =0;
-      height(root,diameter);
-      return diameter;
+     return dfsHeight(root)!= -1;
         
     }
+
 };
