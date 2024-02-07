@@ -1,15 +1,15 @@
 
 
     int missingNumber(vector<int>& nums) {
-        int ans=0;
-        for(int i =0; i<=nums.size(); i++){
-            ans = ans+i;
-        }
+        int N = nums.size();
+
+          int sum = (N * (N + 1)) / 2;
+        
 
         for(int i=0;i<nums.size(); i++){
-            ans = ans-nums[i];
+            sum = sum-nums[i];
         }
-        return ans;
+        return sum;
     }
 
 // Time Complexity :- O(N)
