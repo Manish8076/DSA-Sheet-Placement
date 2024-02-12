@@ -34,8 +34,8 @@ int getLongestSubarray(vector<int>& a, int k){
     return maxLen;
 }
 
-// Time Coplexity :- O(N)
-// Space Complexity :- O(1)
+// Time Coplexity :- O(N * logN)
+// Space Complexity :- O(N)
 
 
 
