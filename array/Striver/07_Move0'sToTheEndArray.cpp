@@ -1,6 +1,8 @@
 
 
     void moveZeroes(vector<int>& nums) {
+        // Approach 1 :- Using two pointer approach 
+        
     //         int j = -1;
     //         int n = a.size();
     // //place the pointer j:
@@ -23,6 +25,9 @@
     //     }
     // }
 
+
+    // Approach 2
+
     int n = nums.size();
     int j =0;
 
@@ -39,5 +44,5 @@
 
 // For both the apporach the complexity is same 
 // Time Complexity :- O(N)
-// Scpace Complexity :- O(N) 
+// Scpace Complexity :- O(1) 
 
