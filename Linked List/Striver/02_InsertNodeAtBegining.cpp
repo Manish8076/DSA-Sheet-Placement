@@ -12,5 +12,5 @@ Node* insertAtFirst(Node* list, int newValue) {
     return list;
 }
 
-// Time Complexity :- O(N)
+// Time Complexity :- O(1)
 // Space Complexity :- O(1)
