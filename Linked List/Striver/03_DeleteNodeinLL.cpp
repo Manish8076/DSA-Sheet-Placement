@@ -1,10 +1,8 @@
 
-void deleteNode(ListNode* node) {
+    void deleteNode(ListNode* node) {
    
-        ListNode *current = node->next;
-        node->val = current->val;
-        node->next = current->next;
-        current->next = NULL;
+        node->val = node->next->val;
+        node->next  = node->next->next;
 
     }
 
