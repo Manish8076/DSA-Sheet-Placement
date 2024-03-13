@@ -1,24 +1,13 @@
     ListNode* middleNode(ListNode* head) {
         
-        int count =0;
-        ListNode *temp = head;
-        while(temp!= NULL){
-            count++;
-            temp = temp->next;
-        }
-        int mid = count/2 + 1;
+        ListNode *slow = head;
+        ListNode *fast = head;
 
-        count =0;
-        temp = head;
-
-        while(temp!=NULL){
-            count ++;
-            if(count == mid){
-                break;
-            }
-            temp = temp->next;
+        while( fast && fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
         }
-        return temp;
+        return slow;
     }
 // Time Complexity :- O(N)
 // Spaace Complexity :- O(1)
