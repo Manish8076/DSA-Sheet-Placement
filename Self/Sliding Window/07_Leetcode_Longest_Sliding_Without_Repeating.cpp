@@ -8,10 +8,7 @@
         while(end<n){
             mp[s[end]]++;
             
-            if(mp.size()>(end-start+1)){
-                end++;
-            }
-            else if(mp.size() == (end-start+1)){
+            if(mp.size() == (end-start+1)){
                 ans = max(ans,(end-start+1));
                 end++;
             }
