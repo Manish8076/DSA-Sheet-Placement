@@ -1,34 +1,26 @@
 
     int longestConsecutive(vector<int>& nums) {
-        int n = nums.size();
+      unordered_set<int>st(nums.begin(), nums.end());
         int ans = 0;
-        if(n == 0){
+
+        if(nums.size() == 0){
             return 0;
         }
-        unordered_set<int>st;
 
-        for(int i=0; i<n ; i++){
-            st.insert(nums[i]);
-        }
-        for(int i=0; i<n; i++){
-            if(st.find(nums[i]-1) != st.end()){
-                continue;
-            }
-            else{
-                int count = 0;
-                int current = nums[i];
+        for(int num: nums){
+            if(st.find(num-1) == st.end()){
+                int length = 1;
 
-                while(st.find(current)!=st.end()){
-                    count++;
-                    current++;
+                while(st.find(num+length) != st.end()){
+                    length++;
                 }
-                ans = max(ans,count);
+                    ans = max(ans,length);
             }
         }
         return ans;
     }
 
 
-// Time Complexity: O(n^2) (worst case)
+// Time Complexity: O(n)
 // Space Complexity: O(n)
 
